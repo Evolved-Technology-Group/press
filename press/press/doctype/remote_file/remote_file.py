@@ -218,12 +218,15 @@ class RemoteFile(Document):
 				region = backup_bucket.region
 				endpoint_url = backup_bucket.endpoint_url or endpoint_url
 
+		from botocore.client import Config
+
 		return client(
 			"s3",
 			aws_access_key_id=access_key_id,
 			aws_secret_access_key=secret_access_key,
 			region_name=region,
 			endpoint_url=endpoint_url,
+			config=Config(signature_version="s3v4", s3={"addressing_style": "virtual"}),
 		)
 
 	@property
