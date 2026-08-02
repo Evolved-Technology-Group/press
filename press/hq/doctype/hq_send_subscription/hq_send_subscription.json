@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "autoname": "field:tenant",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "plan",
+  "status",
+  "sender_email",
+  "sender_domain",
+  "activated_at",
+  "integration_section",
+  "halo_software_licence_id",
+  "provider_subaccount_id",
+  "provider_api_key",
+  "last_error"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tenant",
+   "options": "HQ Tenant",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Yukon Send plan",
+   "options": "HQ Send Plan",
+   "reqd": 1
+  },
+  {
+   "default": "Not active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Not active\nActivating\nActive\nFailed\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sender_email",
+   "fieldtype": "Data",
+   "label": "Sender email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sender_domain",
+   "fieldtype": "Data",
+   "label": "Sender domain",
+   "reqd": 1
+  },
+  {
+   "fieldname": "activated_at",
+   "fieldtype": "Datetime",
+   "label": "Activated at",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "integration_section",
+   "fieldtype": "Section Break",
+   "label": "Integration state"
+  },
+  {
+   "fieldname": "halo_software_licence_id",
+   "fieldtype": "Data",
+   "label": "Halo subscription ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provider_subaccount_id",
+   "fieldtype": "Data",
+   "label": "Delivery account ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provider_api_key",
+   "fieldtype": "Password",
+   "hidden": 1,
+   "label": "Tenant delivery credential",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_error",
+   "fieldtype": "Small Text",
+   "label": "Last error",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "HQ",
+ "name": "HQ Send Subscription",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "request_id",
+  "tenant",
+  "status",
+  "subject",
+  "category",
+  "priority",
+  "requester_email",
+  "description",
+  "context_section",
+  "page_url",
+  "payload_hash",
+  "halo_ticket_id",
+  "halo_ticket_url",
+  "submitted_at",
+  "last_error"
+ ],
+ "fields": [
+  {
+   "fieldname": "request_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant request ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tenant",
+   "options": "HQ Tenant",
+   "reqd": 1
+  },
+  {
+   "default": "Stored",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Stored\nSubmitting\nSubmitted\nFailed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Technical issue\nHow-to question\nBilling\nFeature request\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "options": "Normal\nHigh\nUrgent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requester_email",
+   "fieldtype": "Data",
+   "label": "Requester email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "context_section",
+   "fieldtype": "Section Break",
+   "label": "Integration context"
+  },
+  {
+   "fieldname": "page_url",
+   "fieldtype": "Small Text",
+   "label": "Page URL"
+  },
+  {
+   "fieldname": "payload_hash",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Payload hash",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "halo_ticket_id",
+   "fieldtype": "Data",
+   "label": "Halo ticket ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "halo_ticket_url",
+   "fieldtype": "Data",
+   "label": "Halo ticket URL",
+   "options": "URL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "submitted_at",
+   "fieldtype": "Datetime",
+   "label": "Submitted at",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_error",
+   "fieldtype": "Small Text",
+   "label": "Last error",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "HQ",
+ "name": "HQ Support Request",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "title_field": "subject",
+ "track_changes": 1
+}

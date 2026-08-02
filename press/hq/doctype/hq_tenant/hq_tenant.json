@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "autoname": "field:site",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "site",
+  "customer_name",
+  "status",
+  "team",
+  "halo_section",
+  "halo_client_id",
+  "halo_site_id",
+  "halo_user_id",
+  "authentication_section",
+  "tenant_token_digest",
+  "previous_token_digest",
+  "token_issued_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Press Site",
+   "options": "Site",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Active\nSuspended",
+   "reqd": 1
+  },
+  {
+   "fieldname": "team",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Press Team",
+   "options": "Team",
+   "read_only": 1
+  },
+  {
+   "fieldname": "halo_section",
+   "fieldtype": "Section Break",
+   "label": "HaloPSA mapping"
+  },
+  {
+   "fieldname": "halo_client_id",
+   "fieldtype": "Data",
+   "label": "Halo client ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "halo_site_id",
+   "fieldtype": "Data",
+   "label": "Halo site ID"
+  },
+  {
+   "fieldname": "halo_user_id",
+   "fieldtype": "Data",
+   "label": "Default Halo user ID"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "authentication_section",
+   "fieldtype": "Section Break",
+   "label": "Tenant authentication"
+  },
+  {
+   "fieldname": "tenant_token_digest",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Current token digest",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_token_digest",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Previous token digest",
+   "read_only": 1
+  },
+  {
+   "fieldname": "token_issued_at",
+   "fieldtype": "Datetime",
+   "label": "Token issued at",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "HQ",
+ "name": "HQ Tenant",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "customer_name",
+ "track_changes": 1
+}

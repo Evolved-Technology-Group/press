@@ -1,0 +1,26 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"hq-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Yukon HQ</span>\",\"col\":12}},{\"id\":\"hq-tenants\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HQ Tenants\",\"col\":3}},{\"id\":\"hq-plans\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Yukon Send Plans\",\"col\":3}},{\"id\":\"hq-subscriptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Yukon Send Subscriptions\",\"col\":3}},{\"id\":\"hq-support\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Support Requests\",\"col\":3}}]",
+ "custom_blocks": [],
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "organization",
+ "is_hidden": 0,
+ "label": "Yukon HQ",
+ "links": [],
+ "module": "HQ",
+ "name": "Yukon HQ",
+ "number_cards": [],
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {"role": "System Manager"}
+ ],
+ "shortcuts": [
+  {"color": "Blue", "doc_view": "List", "label": "HQ Tenants", "link_to": "HQ Tenant", "type": "DocType"},
+  {"color": "Green", "doc_view": "List", "label": "Yukon Send Plans", "link_to": "HQ Send Plan", "type": "DocType"},
+  {"color": "Green", "doc_view": "List", "label": "Yukon Send Subscriptions", "link_to": "HQ Send Subscription", "type": "DocType"},
+  {"color": "Orange", "doc_view": "List", "label": "Support Requests", "link_to": "HQ Support Request", "type": "DocType"}
+ ],
+ "title": "Yukon HQ"
+}
