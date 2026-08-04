@@ -226,6 +226,10 @@ class RemoteFile(Document):
 			aws_secret_access_key=secret_access_key,
 			region_name=region,
 			endpoint_url=endpoint_url,
+			# Without an explicit s3v4 signature, boto3 presigns against the
+			# legacy global endpoint (s3.amazonaws.com) while signing for the
+			# bucket's real region, so every offsite restore 403s outside
+			# us-east-1. CARRIED PATCH - shed when upstream fixes this.
 			config=Config(signature_version="s3v4", s3={"addressing_style": "virtual"}),
 		)
 
