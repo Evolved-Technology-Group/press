@@ -102,6 +102,8 @@ from press.utils import (
 )
 from press.utils.dns import _change_dns_record, check_dns_cname_a, create_dns_record
 
+SITE_ADMIN_PASSWORD_LENGTH = 64
+
 if TYPE_CHECKING:
 	from datetime import datetime
 
@@ -520,7 +522,7 @@ class Site(Document, TagHelpers):
 	def set_site_admin_password(self):
 		# set site.admin_password if doesn't exist
 		if not self.admin_password:
-			self.admin_password = frappe.generate_hash(length=16)
+			self.admin_password = frappe.generate_hash(length=SITE_ADMIN_PASSWORD_LENGTH)
 
 	def validate_bench(self):
 		if (

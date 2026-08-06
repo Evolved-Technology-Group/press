@@ -185,6 +185,13 @@ class TestSite(FrappeTestCase):
 	def tearDown(self):
 		frappe.db.rollback()
 
+	def test_generated_site_admin_password_is_64_characters(self):
+		site = frappe.new_doc("Site")
+
+		site.set_site_admin_password()
+
+		self.assertEqual(len(site.admin_password), 64)
+
 	def test_host_name_updates_perform_checks_on_host_name(self):
 		"""Ensure update of host name triggers verification of host_name."""
 		site = create_test_site("testsubdomain")
