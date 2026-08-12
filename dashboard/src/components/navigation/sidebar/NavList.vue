@@ -94,6 +94,50 @@ const list = computed(() => {
 		},
 
 		{
+			// Yukon HQ. Desk users only — a customer team must never see the
+			// control plane, and `is_desk_user` is the same signal press uses for
+			// its own operator-only affordances.
+			name: 'HQ',
+			icon: LucideShieldCheck,
+			route: '/hq/alerts',
+			condition: Boolean($team.doc?.is_desk_user),
+			isActive: routeName.startsWith('HQ '),
+			disabled: enforce2FA,
+			children: [
+				{
+					name: 'Alerts',
+					icon: LucideTriangleAlert,
+					route: '/hq/alerts',
+					isActive: routeName.startsWith('HQ Fleet Alert'),
+				},
+				{
+					name: 'Pods',
+					icon: LucideBoxes,
+					route: '/hq/pods',
+					isActive: routeName.startsWith('HQ Pod'),
+				},
+				{
+					name: 'Tenants',
+					icon: LucideBuilding2,
+					route: '/hq/tenants',
+					isActive: routeName.startsWith('HQ Tenant'),
+				},
+				{
+					name: 'Onboarding',
+					icon: LucideUserPlus,
+					route: '/hq/onboarding',
+					isActive: routeName.startsWith('HQ Onboarding'),
+				},
+				{
+					name: 'Settings',
+					icon: LucideSettings,
+					route: '/hq/settings',
+					isActive: routeName === 'HQ Settings',
+				},
+			],
+		},
+
+		{
 			name: 'Dev Tools',
 			icon: LucideCode,
 			route: '/devtools',

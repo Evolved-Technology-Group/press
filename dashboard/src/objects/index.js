@@ -5,6 +5,11 @@ import marketplace from './marketplace';
 import server from './server';
 import notification from './notification';
 import accessRequests from './accessRequests';
+// Yukon HQ. New files only, plus these entries — generateRoutes() does the rest.
+import hqAlert from './hq/alert';
+import hqOnboarding from './hq/onboarding';
+import hqPod from './hq/pod';
+import hqTenant from './hq/tenant';
 
 let objects = {
 	Site: site,
@@ -14,6 +19,10 @@ let objects = {
 	Server: server,
 	Notification: notification,
 	AccessRequests: accessRequests,
+	HQFleetAlert: hqAlert,
+	HQPod: hqPod,
+	HQTenant: hqTenant,
+	HQOnboarding: hqOnboarding,
 };
 
 export function getObject(name) {

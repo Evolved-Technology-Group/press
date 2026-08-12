@@ -497,6 +497,11 @@ let router = createRouter({
 			component: () => import('./pages/devtools/log-browser/LogBrowser.vue'),
 			props: true,
 		},
+		{
+			name: 'HQ Settings',
+			path: '/hq/settings',
+			component: () => import('./pages/hq/Settings.vue'),
+		},
 		...generateRoutes(),
 		// TODO: makeshift redirect fixes for /insights paths
 		{
